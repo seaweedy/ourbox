@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ourbox</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <filter>
+    <filter-name>CustomEncodingFilter</filter-name>
+    <filter-class>ourbox.common.filter.CustomEncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>CustomEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>WebChatServer</servlet-name>
+    <servlet-class>ourbox.chat.controller.WebChatServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WebChatServer</servlet-name>
+    <url-pattern>/WebChatServer</url-pattern>
+  </servlet-mapping>
+</web-app>
